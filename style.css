@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    background-color: #333;  
+    color: #cccccc;             
+    line-height: 1.6;
+    max-width: 900px;       
+    margin: 0 auto;          
+}
+
+
+header {
+    position: sticky;
+    font-family: 'Roboto' sans-serif;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #222;
+    color: #cccccc;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;  /* More padding for a wider header */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1:hover{
+    color: #f0a0c5;
+    transform: scale(1.01, 1.01);
+    transition: 0.25s; 
+
+}
+
+/* General Section Styling */
+#about, #projects, #skills, #contact {
+    background-color: #444;  /* Dark background for sections */
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 750px;         /* Keeps the sections from stretching too wide */
+    margin: 0 auto;           /* Centers the sections */
+}
+
+/* Personal Details Section */
+.personal-details {
+    background-color: #555;  /* Dark background for the personal details box */
+    border-radius: 8px;       /* Rounded corners */
+    padding: 15px;            /* Adds padding around the text */
+    margin-top: 20px;         /* Space between About Me and Personal Details */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Soft shadow for effect */
+}
+
+/* Personal Details Title */
+.personal-details h3 {
+    font-size: 1.2em;         /* Larger font for the title */
+    color: #f8a4c0;           /* Soft pink for the title */
+    margin-bottom: 10px;      /* Space below the title */
+}
+
+/* Personal Details List */
+.personal-details ul {
+    list-style: none;         /* Removes default list styling */
+    padding-left: 0;          /* Removes left padding */
+    margin-top: 10px;         /* Adds some space before the list */
+}
+
+.personal-details li {
+    font-size: 1em;           /* Normal font size for the list items */
+    color: #cccccc;           /* Light gray color for the text */
+    margin-bottom: 8px;       /* Space between list items */
+}
+
+/* Styling for the Strong Labels (Name, Age, etc.) */
+.personal-details li strong {
+    color: #cdcdcd;           /* Soft pink for the labels */
+}
+
+/* Emojis styling */
+.personal-details li span {
+    font-size: 1.2em;         /* Slightly larger size for emojis */
+    margin-right: 8px;        /* Adds space between the emoji and the text */
+}
+
+#about-me {
+    background-color: #444;  /* Matching dark background for consistency */
+    border: 1px solid #555;  /* Border color to match the rest */
+    border-radius: 8px;       /* Rounded corners */
+    padding: 20px;            /* Adds padding around the text */
+    margin-bottom: 20px;      /* Space between sections */
+    max-width: 750px;         /* Limits the width */
+    margin: 0 auto;           /* Centers the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow effect */
+}
+
+#about-me h2 {
+    font-size: 1.5em;         /* Slightly larger heading */
+    color: #f8a4c0;           /* Soft pink for the heading */
+    margin-bottom: 15px;      /* Adds space between title and content */
+}
+
+.about-text p {
+    font-size: 1.1em;         /* Slightly larger text */
+    line-height: 1.6;         /* Increases line height for readability */
+    color: #cccccc;           /* Light gray text */
+    margin-bottom: 20px;      /* Space at the bottom of the paragraph */
+}
+
+
+h2 {
+    color: #cccccc;  
+}
+
+nav a {
+    color: #cccccc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+a {
+    color: #f8a4c0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f0a0c5;
+}
+
+#skills .section {
+    background-color: #555;  
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.skills-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    background-color: #444;  
+}
+
+.skill {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+.skill-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;  
+    color: #cccccc;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 70%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#projects .project {
+    background-color: #555;  
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#contact .contact-item {
+    background-color: #555;  
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;  
+    color: #cccccc;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.skills-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #444;  
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.skill-item {
+    position: relative;
+    width: 100px;
+    height: 125px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #555;  
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: scale(1.1);
+    background-color: #666;  
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.3);
+}
+
+.skill-name {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #cccccc;  
+    
+}
+
+.skills-carousel::-webkit-scrollbar {
+    display: none;  
+}
+
+.name {
+    font-weight: 500;  /* Keep the name bold */
+    display: inline-block; /* Ensures the name stays inline */
+    font-style: italic;
+}
+
+.name:hover{
+    color:#f8a4c0;
+    transition: color 0.3s ease;
+}
+
+.pronouns {
+    font-size: 0.8em;       /* Smaller text for the pronouns */
+    color: #bebebe;            /* Light color for the pronouns */
+    background-color: #333; /* No background color */
+    padding: 0 4px;         /* Reduce the padding around the pronouns */
+    border-radius: 5px;     /* Optional: rounded corners */
+    margin-left: 2px;       /* Reduce space between name and pronouns */
+}
+
+/* Resume Button Styling */
+.resume-btn {
+    background-color: #f8a4c0;  /* Soft pink background */
+    color: #ffffff;            /* White text */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;             /* Font size */
+    padding: 10px 20px;         /* Padding around the text */
+    border: none;               /* No border */
+    border-radius: 5px;         /* Rounded corners */
+    cursor: pointer;           /* Pointer on hover */
+    text-decoration: none;      /* Remove underline */
+    transition: background-color 0.3s, transform 0.2s;  /* Smooth transition on hover */
+}
+
+.contact-item:last-child {
+    justify-content: flex-end; /* This aligns the last contact item (CV button) to the right */
+}
+
+.resume-btn:hover {
+    background-color: #f0a0c5;  /* Lighter pink on hover */
+    transform: scale(1.05);      /* Slight zoom effect */
+}
+
+.resume-btn:focus {
+    outline: none;  /* Remove outline when clicked */
+}
+
+.resume-btn:active {
+    background-color: #e87e9e;  /* Darker pink when button is pressed */
+}
+
